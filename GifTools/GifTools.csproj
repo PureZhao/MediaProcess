@@ -51,6 +51,7 @@
     <Compile Include="Core\GifExtractor.cs" />
     <Compile Include="Core\GifMaker.cs" />
     <Compile Include="Core\GlobalConfig.cs" />
+    <Compile Include="Core\ImageCodecUtils.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

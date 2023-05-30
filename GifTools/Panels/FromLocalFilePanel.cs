@@ -17,14 +17,13 @@ namespace GifTools.Panels
         private TextBox filenameDisplayBox;
         private Button filenameSelectButton;
         
-
         private PictureBox preview;
         private FlowLayoutPanel gridLayout;
 
         private Button saveButton;
 
         private Image src;
-        private Image thumbnail;
+        //private Image thumbnail;
 
 
         public FromLocalFilePanel()
