@@ -102,10 +102,38 @@ namespace GifTools.Panels
             gridLayout.Dispose();
         }
 
+        private string CheckUrl(string url)
+        {
+            HttpWebRequest req = null;
+            try
+            {
+                req = (HttpWebRequest)WebRequest.Create(url);
+                req.Method = "HEAD";
+                req.Timeout = 5000;
+                HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+                return Convert.ToInt32(res.StatusCode).ToString();
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                req?.Abort();
+            }
+        }
+
         private async void OnRequestClick(object sender, EventArgs e)
         {
             string url = urlDisplayBox.Text;
+            if (CheckUrl(url) != "200")
+            {
+                urlDisplayBox.Text = "Invalid Url";
+                return;
+            }
+                
             WebRequest request = WebRequest.Create(url);
+            request.Timeout = 10000;
             Task<WebResponse> responseTask = request.GetResponseAsync();
             WebResponse response = await responseTask;
             Stream stream = response.GetResponseStream();
@@ -113,7 +141,7 @@ namespace GifTools.Panels
             response.Close();
             response.Dispose();
             stream.Close();
-            stream.Dispose();
+            stream.Dispose();            
         }
 
         private void OnSaveClick(object sender, EventArgs e)
