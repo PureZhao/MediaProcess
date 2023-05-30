@@ -74,6 +74,7 @@ namespace GifTools.Panels
                 Location = new Point(561, 400),
                 Size = new Size(100, 33),
                 Font = GlobalConfig.DefaultFont,
+                Enabled = false,
             };
             saveButton.Click += OnSaveClick;
 
@@ -151,6 +152,7 @@ namespace GifTools.Panels
 
                     gridLayout.Controls.Add(pictureBox);
                 }
+                saveButton.Enabled = true;
             }
 
             openFileDialog.Dispose();
