@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
+using GifTools.Utils;
 
 namespace GifTools.Panels
 {

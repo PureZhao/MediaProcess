@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GifTools.Core
+namespace GifTools.Utils
 {
     public static class AlignUtils
     {

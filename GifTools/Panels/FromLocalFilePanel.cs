@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GifTools.Core;
 using System.Drawing.Imaging;
+using GifTools.Utils;
 
 namespace GifTools.Panels
 {
